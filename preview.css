@@ -1,0 +1,69 @@
+/**
+ * Version 1.0.1
+ * 
+ * Usage 
+ * resources\views\user\portofolio\preview.blade.php
+ */
+
+.user-generated-img:hover {
+    cursor: zoom-in;
+}
+
+#fullscreen-view {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(234, 234, 235, 0.90);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+
+#fullscreen-view .image {
+    max-width: 90%;
+    max-height: 90%;
+    opacity: 0.1;
+    transition: all 0.5s;
+}
+
+#fullscreen-view .close-icon {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+}
+
+body.blur>#fullscreen-view,
+body.blur>#fullscreen-view .image {
+    display: flex;
+    opacity: 1;
+}
+
+body.blur>*:not(#fullscreen-view) {
+    filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    #fullscreen-view .close-icon {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    #fullscreen-view .image {
+        max-height: 85%;
+    }
+}
+
+#fullscreen-view .close-icon:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav.navbar {
+        height: unset;
+    }
+}
